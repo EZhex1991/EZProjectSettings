@@ -15,12 +15,48 @@ Open the settings from `Edit > Project Settings > EZProjectSettings`.
 - `EZAssetImporterManager`: Asset importer Preset settings with automatic Preset application.
 - `EZGraphicsSettings`: A convenient interface for managing Always Included Shaders in Graphics Settings.
 
+## Samples
+
+The sample content can be imported from **Window > Package Manager > EZProjectSettings > Samples**.
+
+### EZEditorSettings
+
+- `Hierarchy Toggle Enabled`: Displays an Active Toggle in the Hierarchy window, allowing GameObjects to be enabled or disabled without changing `Selection.activeObject`.
+
+![EZEditorSettings](Documentation~/Images/EZEditorSettings.png)
+
+### EZAssetImporterManager
+
+Manages import settings for Model, Texture, and Audio importers. Default import options can be configured for each asset type, with Presets associated through filename Tags. During asset import, matching Presets are searched from the current directory toward its parent directories and applied automatically.
+
+![EZAssetImporterManager](Documentation~/Images/EZAssetImporterManager.png)
+
+### EZGraphicsSettings
+
+Provides tools for managing Always Included Shaders, including searching project shaders and adding or removing them from the list.
+
+![EZGraphicsSettings](Documentation~/Images/EZGraphicSettings.png)
+
+### EZScriptSettings
+
+Manages Unity script templates in the Editor. Unity stores these templates in `Editor/Resources/ScriptTemplates` inside the Unity installation. After importing the sample, the templates can be managed from the settings panel.
+
+![CreateMenu](Documentation~/Images/CreateMenu.png)
+
+Open `Edit > Project Settings > EZProjectSettings > EZScriptSettings`, then select a matching TextAsset in the Project window to add it to Unity's script template directory. `#SCRIPTNAME#` is replaced with the new script name, `#CREATETIME#` is replaced with the creation time, and additional variables can be defined in Custom Pattern.
+
+![EZScriptSettings](Documentation~/Images/EZScriptSettings.png)
+
+The example script templates are located at `Samples~/Demo/ScriptTemplates`.
+
 ## Directory Structure
 
 ```text
 EZProjectSettings/
 ├── README.md — Chinese module documentation.
 ├── README_EN.md — English module documentation.
+├── Documentation~/Images/ — README and sample images.
+├── Samples~/Demo/ScriptTemplates/ — Example script templates.
 └── Editor/
     ├── EZProjectSettingsProviders.cs — Registers Project Settings providers.
     ├── EZhex1991.EZProjectSettings.Editor.asmdef — Defines the editor assembly.
