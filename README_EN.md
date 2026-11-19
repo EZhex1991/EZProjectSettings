@@ -2,7 +2,7 @@
 
 [中文](README.md)
 
-EZProjectSettings is an independent Unity editor project settings module. It does not depend on EZUnity or EZEditorTools.
+EZProjectSettings provides project settings extensions for the Unity Editor.
 
 Minimum supported Unity version: `2020.3.x`.
 
