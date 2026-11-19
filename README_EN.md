@@ -6,12 +6,14 @@ EZProjectSettings provides project settings extensions for the Unity Editor.
 
 Minimum supported Unity version: `2020.3.x`.
 
+Open the settings from `Edit > Project Settings > EZProjectSettings`.
+
 ## Settings
 
 - `EZEditorSettings`: Editor settings and Hierarchy extensions.
 - `EZScriptSettings`: Script templates and file header processing settings.
-- `EZAssetImporterManager`: Asset importer Preset settings.
-- `EZGraphicsSettings`: Project Graphics settings.
+- `EZAssetImporterManager`: Asset importer Preset settings with automatic Preset application.
+- `EZGraphicsSettings`: A convenient interface for managing Always Included Shaders in Graphics Settings.
 
 ## Directory Structure
 
