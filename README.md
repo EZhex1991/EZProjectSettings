@@ -1,5 +1,7 @@
 # EZProjectSettings
 
+[English](README_EN.md)
+
 EZProjectSettings 是独立的 Unity 编辑器项目设置模块，不依赖 EZUnity 或 EZEditorTools。
 
 最低支持 Unity 版本：`2020.3.x`。
