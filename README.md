@@ -10,7 +10,6 @@ EZProjectSettings 是 Unity 编辑器的项目设置扩展。
 
 ## 设置
 
-- `EZEditorSettings`：编辑器设置和 Hierarchy 扩展。
 - `EZScriptSettings`：脚本模板和文件头处理设置。
 - `EZAssetImporterManager`：资源导入器 Preset 设置，并支持自动应用 Preset。
 - `EZGraphicsSettings`：提供更加方便的界面管理 Graphics Settings 中的 Always Included Shaders。
@@ -18,12 +17,6 @@ EZProjectSettings 是 Unity 编辑器的项目设置扩展。
 ## 示例
 
 示例内容可以通过 **Window > Package Manager > EZProjectSettings > Samples** 导入。
-
-### EZEditorSettings
-
-- `Hierarchy Toggle Enabled`：在 Hierarchy 窗口中显示 Active Toggle，可在不改变 `Selection.activeObject` 的情况下启用或关闭 GameObject。
-
-![EZEditorSettings](Documentation~/Images/EZEditorSettings.png)
 
 ### EZAssetImporterManager
 
@@ -65,7 +58,6 @@ EZProjectSettings/
     │   └── EZEditorUtility.cs — 提供设置 Inspector 使用的编辑器资源查询方法。
     └── ProjectSettings/
         ├── _EZProjectSettings.cs — 项目设置单例的加载和保存基础实现。
-        ├── EZEditorSettings.cs — 编辑器设置和 Hierarchy 扩展。
         ├── EZScriptSettings.cs — 脚本模板和文件头替换设置。
         ├── EZScriptSettingsEditor.cs — 脚本设置 Inspector。
         ├── EZScriptProcessor.cs — 脚本创建时的文件头处理器。

@@ -8,6 +8,10 @@
 - Merged the original demo documentation into the package README files.
 - Moved sample screenshots to `Documentation~/Images`.
 
+### Changed
+
+- Removed `EZEditorSettings`; the Hierarchy Active Toggle is now provided by EZEditorTools as an editor-local preference.
+
 ## [1.0.1] - 2026-11-19
 
 ### Documentation

@@ -10,7 +10,6 @@ Open the settings from `Edit > Project Settings > EZProjectSettings`.
 
 ## Settings
 
-- `EZEditorSettings`: Editor settings and Hierarchy extensions.
 - `EZScriptSettings`: Script templates and file header processing settings.
 - `EZAssetImporterManager`: Asset importer Preset settings with automatic Preset application.
 - `EZGraphicsSettings`: A convenient interface for managing Always Included Shaders in Graphics Settings.
@@ -18,12 +17,6 @@ Open the settings from `Edit > Project Settings > EZProjectSettings`.
 ## Samples
 
 The sample content can be imported from **Window > Package Manager > EZProjectSettings > Samples**.
-
-### EZEditorSettings
-
-- `Hierarchy Toggle Enabled`: Displays an Active Toggle in the Hierarchy window, allowing GameObjects to be enabled or disabled without changing `Selection.activeObject`.
-
-![EZEditorSettings](Documentation~/Images/EZEditorSettings.png)
 
 ### EZAssetImporterManager
 
@@ -65,7 +58,6 @@ EZProjectSettings/
     │   └── EZEditorUtility.cs — Editor resource query helpers for settings.
     └── ProjectSettings/
         ├── _EZProjectSettings.cs — Base implementation for loading and saving project settings singletons.
-        ├── EZEditorSettings.cs — Editor settings and Hierarchy extensions.
         ├── EZScriptSettings.cs — Script templates and file header replacement settings.
         ├── EZScriptSettingsEditor.cs — Inspector for script settings.
         ├── EZScriptProcessor.cs — Processes file headers when scripts are created.

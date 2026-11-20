@@ -23,12 +23,6 @@ namespace EZhex1991.EZProjectSettings
         }
 
         [SettingsProvider]
-        private static SettingsProvider CreateEZEditorSettingsProvider()
-        {
-            return CreateProjectSettingsProvider(nameof(EZEditorSettings), EZEditorSettings.Instance);
-        }
-
-        [SettingsProvider]
         private static SettingsProvider CreateEZScriptSettingsProvider()
         {
             return CreateProjectSettingsProvider(nameof(EZScriptSettings), EZScriptSettings.Instance);
