@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.3] - 2026-11-20
+
+### Changed
+
+- Removed the migrated Hierarchy Active Toggle editor extension and its documentation image.
+
 ## [1.0.2] - 2026-11-19
 
 ### Added
