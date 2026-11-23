@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace EZhex1991.EZProjectSettings
 {
-    public static partial class EZEditorGUIUtility
+    public static class EZEditorGUIUtility
     {
         public static float width;
         public static float GetDigitWidth(float number)
@@ -64,7 +64,7 @@ namespace EZhex1991.EZProjectSettings
             property.stringValue = EditorGUI.TextField(pathRect, property.stringValue);
             if (GUI.Button(buttonRect, "..."))
             {
-                string path = EditorUtility.OpenFolderPanel("Select Source Folder", property.stringValue, "");
+                string path = EditorUtility.OpenFolderPanel("Select Folder", property.stringValue, "");
                 if (!string.IsNullOrEmpty(path))
                 {
                     string projectRelativePath = FileUtil.GetProjectRelativePath(path);
