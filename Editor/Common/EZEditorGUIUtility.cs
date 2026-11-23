@@ -2,6 +2,9 @@
  * CreateTime:      2017-11-22 18:08:40
  * Organization:    #ORGANIZATION#
  * Description:     
+ * Source:           Assets/EZhex1991/EZUnity/Editor/Common/EZEditorGUIUtility.cs
+ * Note:             This file is a complete copy kept by the independent package and does not depend on EZUnity assemblies.
+ * Sync:             Modify the source file first, then synchronize changes to this file.
  */
 using UnityEditor;
 using UnityEditorInternal;
@@ -49,6 +52,25 @@ namespace EZhex1991.EZProjectSettings
             GUI.enabled = false;
             EditorGUILayout.ObjectField("Script", MonoScript.FromMonoBehaviour(target), typeof(MonoScript), false);
             GUI.enabled = true;
+        }
+
+        public static void DrawFolderPathField(Rect rect, SerializedProperty property)
+        {
+            const float buttonWidth = 24f;
+            const float spacing = 2f;
+            Rect pathRect = new Rect(rect.x, rect.y, rect.width - buttonWidth - spacing, rect.height);
+            Rect buttonRect = new Rect(pathRect.xMax + spacing, rect.y, buttonWidth, rect.height);
+
+            property.stringValue = EditorGUI.TextField(pathRect, property.stringValue);
+            if (GUI.Button(buttonRect, "..."))
+            {
+                string path = EditorUtility.OpenFolderPanel("Select Source Folder", property.stringValue, "");
+                if (!string.IsNullOrEmpty(path))
+                {
+                    string projectRelativePath = FileUtil.GetProjectRelativePath(path);
+                    property.stringValue = string.IsNullOrEmpty(projectRelativePath) ? path : projectRelativePath;
+                }
+            }
         }
 
         public static void DoLayoutReorderableList(ReorderableList list)

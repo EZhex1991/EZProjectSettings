@@ -2,6 +2,9 @@
  * CreateTime:      2026-11-18 15:19:17
  * Organization:    #ORGANIZATION#
  * Description:     
+ * Source:           Assets/EZhex1991/EZUnity/Editor/Common/EZEditorUtility.cs
+ * Note:             This file is a complete copy kept by the independent package and does not depend on EZUnity assemblies.
+ * Sync:             Modify the source file first, then synchronize changes to this file.
  */
 using System;
 using System.Collections.Generic;
