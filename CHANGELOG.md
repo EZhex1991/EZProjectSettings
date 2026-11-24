@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.4] - 2026-11-24
+
+### Changed
+
+- Synchronized the shared editor utility implementations with the EZUnity source files.
+
 ## [1.0.3] - 2026-11-20
 
 ### Changed
