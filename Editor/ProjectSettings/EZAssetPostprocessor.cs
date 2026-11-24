@@ -84,7 +84,7 @@ namespace EZhex1991.EZProjectSettings
             {
                 MatchImporter(importerManager.textureImporters, typeof(TextureImporter).FullName);
                 var overrides = importerManager.defaultTextureImporterOverrides;
-                if (overrides.enabled)
+                if (importerManager.enableDefaultTextureImporterOverrides)
                 {
                     var textureImporter = assetImporter as TextureImporter;
                     textureImporter.alphaIsTransparency = overrides.alphaIsTransparency;
@@ -98,7 +98,7 @@ namespace EZhex1991.EZProjectSettings
             {
                 if (MatchImporter(importerManager.modelImporters, "UnityEditor.FBXImporter")) return;
                 var overrides = importerManager.defaultModelImporterOverrides;
-                if (overrides.enabled)
+                if (importerManager.enableDefaultModelImporterOverrides)
                 {
                     var modelImporter = assetImporter as ModelImporter;
                     modelImporter.importBlendShapeNormals = overrides.blendShapeNormals;

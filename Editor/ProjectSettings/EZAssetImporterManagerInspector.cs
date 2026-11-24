@@ -14,8 +14,10 @@ namespace EZhex1991.EZProjectSettings
     public class EZAssetImporterManagerInspector : Editor
     {
         private SerializedProperty m_DefaultModelImporterOverrides;
+        private SerializedProperty m_EnableDefaultModelImporterOverrides;
         private SerializedProperty m_ModelImporters;
         private SerializedProperty m_DefaultTextureImporterOverrides;
+        private SerializedProperty m_EnableDefaultTextureImporterOverrides;
         private SerializedProperty m_TextureImporters;
         private SerializedProperty m_AudioImporters;
 
@@ -29,6 +31,7 @@ namespace EZhex1991.EZProjectSettings
         private void OnEnable()
         {
             m_DefaultModelImporterOverrides = serializedObject.FindProperty("m_DefaultModelImporterOverrides");
+            m_EnableDefaultModelImporterOverrides = serializedObject.FindProperty("m_EnableDefaultModelImporterOverrides");
             m_ModelImporters = serializedObject.FindProperty("m_ModelImporters");
             modelImporterList = new ReorderableList(serializedObject, m_ModelImporters, true, true, true, true)
             {
@@ -37,6 +40,7 @@ namespace EZhex1991.EZProjectSettings
             };
 
             m_DefaultTextureImporterOverrides = serializedObject.FindProperty("m_DefaultTextureImporterOverrides");
+            m_EnableDefaultTextureImporterOverrides = serializedObject.FindProperty("m_EnableDefaultTextureImporterOverrides");
             m_TextureImporters = serializedObject.FindProperty("m_TextureImporters");
             textureImporterList = new ReorderableList(serializedObject, m_TextureImporters, true, true, true, true)
             {
@@ -57,12 +61,12 @@ namespace EZhex1991.EZProjectSettings
 
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("Model Importer Settings", EditorStyles.boldLabel);
-            EditorGUILayout.PropertyField(m_DefaultModelImporterOverrides, m_DefaultModelImporterOverrides.isExpanded);
+            DrawModelImporterOverrides();
             EZEditorGUIUtility.DoLayoutReorderableList(modelImporterList);
 
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("Texture Importer Settings", EditorStyles.boldLabel);
-            EditorGUILayout.PropertyField(m_DefaultTextureImporterOverrides, m_DefaultTextureImporterOverrides.isExpanded);
+            DrawTextureImporterOverrides();
             EZEditorGUIUtility.DoLayoutReorderableList(textureImporterList);
 
             EditorGUILayout.Space();
@@ -70,6 +74,33 @@ namespace EZhex1991.EZProjectSettings
             EZEditorGUIUtility.DoLayoutReorderableList(audioImporterList);
 
             serializedObject.ApplyModifiedProperties();
+        }
+
+        private void DrawModelImporterOverrides()
+        {
+            DrawOverrides(m_DefaultModelImporterOverrides, m_EnableDefaultModelImporterOverrides);
+        }
+
+        private void DrawTextureImporterOverrides()
+        {
+            DrawOverrides(m_DefaultTextureImporterOverrides, m_EnableDefaultTextureImporterOverrides);
+        }
+
+        private static void DrawOverrides(SerializedProperty overrides, SerializedProperty enabled)
+        {
+            EditorGUILayout.PropertyField(enabled, new GUIContent("Default Overrides"));
+            EditorGUI.indentLevel++;
+            EditorGUI.BeginDisabledGroup(!enabled.boolValue);
+            SerializedProperty property = overrides.Copy();
+            SerializedProperty endProperty = property.GetEndProperty();
+            bool enterChildren = true;
+            while (property.NextVisible(enterChildren) && !SerializedProperty.EqualContents(property, endProperty))
+            {
+                EditorGUILayout.PropertyField(property, true);
+                enterChildren = false;
+            }
+            EditorGUI.EndDisabledGroup();
+            EditorGUI.indentLevel--;
         }
 
         private static void DrawImporterListHeader(Rect rect, ReorderableList list)

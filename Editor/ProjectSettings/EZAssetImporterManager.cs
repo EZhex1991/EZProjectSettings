@@ -46,7 +46,6 @@ namespace EZhex1991.EZProjectSettings
         [Serializable]
         public class ModelImporterOverrides
         {
-            public bool enabled = false;
             public ModelImporterNormals blendShapeNormals = ModelImporterNormals.Import;
             public bool resampleCurves = false;
             public ModelImporterAnimationCompression animationCompression = ModelImporterAnimationCompression.Off;
@@ -54,11 +53,13 @@ namespace EZhex1991.EZProjectSettings
         [Serializable]
         public class TextureImporterOverrides
         {
-            public bool enabled = false;
             public bool alphaIsTransparency = true;
             public bool mipmapEnabled = false;
         }
 
+        [SerializeField]
+        private bool m_EnableDefaultModelImporterOverrides = false;
+        public bool enableDefaultModelImporterOverrides { get { return m_EnableDefaultModelImporterOverrides; } }
         [SerializeField]
         private ModelImporterOverrides m_DefaultModelImporterOverrides = new ModelImporterOverrides();
         public ModelImporterOverrides defaultModelImporterOverrides { get { return m_DefaultModelImporterOverrides; } }
@@ -66,6 +67,9 @@ namespace EZhex1991.EZProjectSettings
         private Importer[] m_ModelImporters;
         public Importer[] modelImporters { get { return m_ModelImporters; } }
 
+        [SerializeField]
+        private bool m_EnableDefaultTextureImporterOverrides = false;
+        public bool enableDefaultTextureImporterOverrides { get { return m_EnableDefaultTextureImporterOverrides; } }
         [SerializeField]
         private TextureImporterOverrides m_DefaultTextureImporterOverrides = new TextureImporterOverrides();
         public TextureImporterOverrides defaultTextureImporterOverrides { get { return m_DefaultTextureImporterOverrides; } }

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5] - 2026-11-24
+
+### Changed
+
+- Moved default importer override enable switches to the asset importer manager.
+- Disabled default importer override properties when their corresponding switch is off.
+
 ## [1.0.4] - 2026-11-24
 
 ### Changed
