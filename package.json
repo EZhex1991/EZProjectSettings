@@ -4,13 +4,6 @@
   "displayName": "EZProjectSettings",
   "description": "Unity editor extensions for Project Settings.",
   "unity": "2020.3",
-  "samples": [
-    {
-      "displayName": "EZProjectSettings Demo",
-      "description": "Example script templates and screenshots for EZProjectSettings.",
-      "path": "Samples~/Demo"
-    }
-  ],
   "author": {
     "name": "EZhex1991",
     "email": "ezhex1991@outlook.com",
