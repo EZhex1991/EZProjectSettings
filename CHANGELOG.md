@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0] - 2026-11-26
+
+### Changed
+
+- Moved script template management and its samples to EZEditorTools.
+- Removed the script settings provider and sample registration.
+
 ## [1.0.5] - 2026-11-24
 
 ### Changed
